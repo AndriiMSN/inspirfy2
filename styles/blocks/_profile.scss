@@ -445,8 +445,8 @@
 		  height          : 100%;
 
 
-		  background      : url("../assets/img/profile-toggle-3.png") no-repeat center !important;
-		  background-size : contain !important;
+		  background      : url("../assets/img/profile-toggle-3.png") no-repeat left !important;
+		  background-size : cover !important;
 
 
 		  canvas
@@ -564,11 +564,13 @@
 	overflow : hidden;
 	height   : 40%;
 	width    : 0;
+
   }
   to
   {
 	overflow : hidden;
 	width    : 158%;
 	height   : 40%;
+
   }
 }

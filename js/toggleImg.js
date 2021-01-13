@@ -66,82 +66,82 @@ profileBtnLeft.forEach((el, i) => {
 })
 
 
-// Selling block----------------------------------------------------------------------------------------------------------
+// extra block----------------------------------------------------------------------------------------------------------
 
-const sellingTitles = document.querySelectorAll(
-    ".selling__toggle__block__title"
+const extraTitles = document.querySelectorAll(
+    ".extra__toggle__block__title"
 );
 
-const sellingBtnLeft = document.querySelectorAll(
-    ".selling__slider__img__elements__buttons .left"
+const extraBtnLeft = document.querySelectorAll(
+    ".extra__slider__img__elements__buttons .left"
 );
 
-const sellingBtnRight = document.querySelectorAll(
-    ".selling__slider__img__elements__buttons .right"
+const extraBtnRight = document.querySelectorAll(
+    ".extra__slider__img__elements__buttons .right"
 );
 
-const sellingMobile = document.querySelectorAll('.mob-selling__slider')
+const extraMobile = document.querySelectorAll('.mob-extra__slider')
 
-const sellingDesktop = document.querySelectorAll('.selling__slider')
+const extraDesktop = document.querySelectorAll('.extra__slider')
 
-const sellingDescriptions = document.querySelectorAll('.selling__toggle__block__description')
+const extraDescriptions = document.querySelectorAll('.extra__toggle__block__description')
 
-const sellingBlock = document.querySelector('.selling')
+const extraBlock = document.querySelector('.extra')
 
-sellingTitles.forEach((el, i) => {
+extraTitles.forEach((el, i) => {
     // Change styles slider for el #3
     el.addEventListener("click", () => {
         // if (i === 2) {
-        //     // sellingImages.classList.add("row");
+        //     // extraImages.classList.add("row");
         // } else {
-        //     sellingImages.classList.remove("row");
+        //     extraImages.classList.remove("row");
         // }
     });
 
     ToggleImages(
         el,
-        sellingTitles,
-        sellingDesktop,
-        sellingMobile,
+        extraTitles,
+        extraDesktop,
+        extraMobile,
         i,
-        sellingDescriptions,
+        extraDescriptions,
         '-',
-        sellingBlock
+        extraBlock
     );
 });
 
 
-sellingBtnRight.forEach((el, i) => {
+extraBtnRight.forEach((el, i) => {
     el.addEventListener("click", () => {
         RightBtn(
-            sellingTitles,
-            sellingDesktop,
-            sellingDescriptions,
+            extraTitles,
+            extraDesktop,
+            extraDescriptions,
             "-"
         );
         // Change styles for el #3
-        // if (sellingTitles[2].classList.contains("active")) {
-        //     // sellingImages.classList.add("row");
+        // if (extraTitles[2].classList.contains("active")) {
+        //     // extraImages.classList.add("row");
         // } else {
-        //     // sellingImages.classList.remove("row");
+        //     // extraImages.classList.remove("row");
         // }
     });
 })
 
 
-sellingBtnLeft.forEach((el, i) => {
+extraBtnLeft.forEach((el, i) => {
     el.addEventListener("click", () => {
         LeftBtn(
-            sellingTitles,
-            sellingDesktop,
-            sellingDescriptions,
+            extraTitles,
+            extraDesktop,
+            extraDescriptions,
             '-'
         );
         // Change styles for el #3
-        // if (sellingTitles[2].classList.contains("active")) {
-        //     sellingImages.classList.add("row");
+        // if (extraTitles[2].classList.contains("active")) {
+        //     extraImages.classList.add("row");
         // } else {
-        //     sellingImages.classList.remove("row");
+        //     extraImages.classList.remove("row");
         // }
     });
 })
@@ -241,7 +241,7 @@ function ChangeImages(element, desktopItems, i, direction = "") {
 
                 let child = el.querySelector('.toggle-div')
 
-                let containerWidth = document.querySelector(`.selling .container`).clientWidth
+                let containerWidth = document.querySelector(`.profile .container`).clientWidth
 
                 let documentWidth = document.documentElement.clientWidth
 
@@ -256,7 +256,7 @@ function ChangeImages(element, desktopItems, i, direction = "") {
                 if (maxWidth == childWidth) {
                     el.style.transform = `translateX(${direction}${(documentWidth - containerWidth) / 2}px)`
                 } else {
-                    el.style.transform = `translateX(${direction}15%)`
+                    el.style.transform = `translateX(${direction}20%)`
                 }
 
                 child.style.width = `${childWidth}px`;
@@ -272,7 +272,7 @@ function ChangeImages(element, desktopItems, i, direction = "") {
 
                     if (documentWidth > 1150) {
 
-                        let containerWidth = document.querySelector(`.selling .container`).clientWidth
+                        let containerWidth = document.querySelector(`.profile .container`).clientWidth
 
                         let emptyWidth = (documentWidth - containerWidth) / 2
 
@@ -285,7 +285,7 @@ function ChangeImages(element, desktopItems, i, direction = "") {
                         if (maxWidth == childWidth) {
                             el.style.transform = `translateX(${direction}${(documentWidth - containerWidth) / 2}px)`
                         } else {
-                            el.style.transform = `translateX(${direction}15%)`
+                            el.style.transform = `translateX(${direction}20%)`
                         }
 
                         child.style.width = `${childWidth}px`;
@@ -662,23 +662,23 @@ profileMobBtnsRight.forEach((el) => {
 });
 
 
-// Selling
+// extra
 
-const SellingMobBtnsLeft = document.querySelectorAll(
-    ".mob-selling__slider__img__elements__buttons .left"
+const extraMobBtnsLeft = document.querySelectorAll(
+    ".mob-extra__slider__img__elements__buttons .left"
 );
 
-const SellingMobBtnsRight = document.querySelectorAll(
-    ".mob-selling__slider__img__elements__buttons .right"
+const extraMobBtnsRight = document.querySelectorAll(
+    ".mob-extra__slider__img__elements__buttons .right"
 );
 
 
-SellingMobBtnsLeft.forEach((el) => {
-    LeftBtnMob(el, sellingTitles, sellingBlock, sellingMobile, sellingDescriptions)
+extraMobBtnsLeft.forEach((el) => {
+    LeftBtnMob(el, extraTitles, extraBlock, extraMobile, extraDescriptions)
 });
 
-SellingMobBtnsRight.forEach((el) => {
-    RgtBtnMob(el, sellingTitles, sellingBlock, sellingMobile, sellingDescriptions)
+extraMobBtnsRight.forEach((el) => {
+    RgtBtnMob(el, extraTitles, extraBlock, extraMobile, extraDescriptions)
 });
 
 
