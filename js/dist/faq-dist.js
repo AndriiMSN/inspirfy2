@@ -1,0 +1,2 @@
+!function(){const e=document.querySelectorAll(".faq__toggle__items__item");e.forEach((t=>{t.addEventListener("click",(()=>{let c=t.classList.contains("active");e.forEach((e=>e.classList.remove("active"))),c?t.classList.remove("active"):t.classList.add("active")}))}))}();
+//# sourceMappingURL=faq-dist.js.map

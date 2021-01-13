@@ -1,0 +1,318 @@
+.tools
+{
+
+  &__toggle
+  {
+
+    h1
+    {
+      svg
+      {
+        //max-width: 252px;
+        margin-right: 15px;
+        // 1560px
+        @media (max-width: $screen-xl-min)
+        {
+          //max-width: 200px;
+          //transform: translateY(2.5px);
+        }
+        // 520px
+        @media (max-width: $screen-mdsm-min)
+        {
+          //max-width: 95px;
+          margin-right: 8px;
+          //transform: translateY(1px);
+        }
+      }
+    }
+  }
+
+  position: relative;
+
+  &__figure__bg
+  {
+    position: absolute;
+    z-index: 10;
+    left: -10px;
+    max-height: 267px;
+    color: #0c0c0c;
+    z-index: 0;
+    max-width: 266px;
+    bottom: 20px;
+    // 992px
+    @media (max-width: $screen-md-min)
+    {
+      display: none;
+      max-width: 254px;
+    }
+    // 768px
+    @media (max-width: $screen-sm-min)
+    {
+      max-width: 80px;
+      bottom: 10px;
+      left: -24px;
+    }
+
+    img
+    {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .container
+  {
+    z-index: 20;
+  }
+
+  &__slider
+  {
+
+    &.active
+    {
+      position: relative;
+      z-index: 20;
+      opacity: 1;
+    }
+
+    &.disabled
+    {
+      position: absolute;
+      z-index: -20;
+      opacity: 0;
+    }
+
+    &__img
+    {
+      width: 100%;
+
+      &__bg-1
+      {
+        background: url("../assets/img/tools-slider-bg.png");
+        width: 100%;
+        height: 100%;
+      }
+
+      &__bg-2
+      {
+        background: url("../assets/img/tools-slider-bg-1.png");
+        width: 100%;
+        height: 100%;
+      }
+
+      &__bg-3
+      {
+        background: url("../assets/img/tools-slider-bg-2.png");
+        width: 100%;
+        height: 100%;
+      }
+
+      &__images__toggle-1
+      {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        .toggle-div
+        {
+
+          &.op-0
+          {
+            opacity: 0;
+          }
+        }
+
+        &.row
+        {
+          display: block;
+        }
+
+
+        & div
+        {
+
+          z-index: 20;
+          margin-bottom: 17px;
+
+        }
+
+        &__tools-1-parent
+        {
+          width: 148%;
+          height: 58%;
+
+          max-width: 900px;
+          max-height: 507px;
+
+          &.animate
+          {
+            animation: leftToRightHorizontalTools-1 .8s;
+          }
+        }
+
+        &__tools-1
+        {
+
+          width: 100%;
+          height: 100%;
+
+
+          background: url("../assets/img/tools-toggle-1.png") no-repeat !important;
+          background-size: cover !important;
+
+
+          canvas
+          {
+            width: 100% !important;
+            height: 100% !important;
+          }
+
+        }
+
+        &__tools-2-parent
+        {
+          width: 148%;
+          height: 58%;
+
+          max-width: 900px;
+          max-height: 507px;
+
+          &.animate
+          {
+            animation: leftToRightHorizontalTools-1 .8s;
+          }
+        }
+
+        &__tools-2
+        {
+
+          width: 100%;
+          height: 100%;
+
+
+          background: url("../assets/img/tools-toggle-2.png") no-repeat !important;
+          background-size: cover !important;
+
+
+          canvas
+          {
+            width: 100% !important;
+            height: 100% !important;
+          }
+
+        }
+
+        &__tools-3-parent
+        {
+          width: 148%;
+          height: 58%;
+
+          max-width: 900px;
+          max-height: 507px;
+
+          &.animate
+          {
+            animation: leftToRightHorizontalTools-1 .8s;
+          }
+        }
+
+        &__tools-3
+        {
+
+          width: 100%;
+          height: 100%;
+
+
+          background: url("../assets/img/tools-toggle-3.png") no-repeat !important;
+          background-size: cover !important;
+
+
+          canvas
+          {
+            width: 100% !important;
+            height: 100% !important;
+          }
+
+        }
+      }
+    }
+
+  }
+}
+
+.mob-tools
+{
+  // position: relative;
+  &__figure__bg
+  {
+    position: absolute;
+    z-index: 10;
+    max-height: 267px;
+    z-index: 0;
+    max-width: 80px;
+    bottom: 10px;
+    left: -24px;
+
+    img
+    {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .container
+  {
+    z-index: 20;
+  }
+
+  &__slider
+  {
+    &__img
+    {
+      &__images__toggle-1
+      {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // 768px
+        @media (max-width: $screen-sm-min)
+        {
+          justify-content: center;
+        }
+
+        & div
+        {
+
+          z-index: 20;
+          margin-bottom: 17px;
+
+        }
+
+      }
+    }
+  }
+}
+
+@keyframes leftToRightHorizontalTools-1
+{
+  from
+  {
+    overflow: hidden;
+    height: 58%;
+    width: 0;
+  }
+  to
+  {
+    overflow: hidden;
+    width: 148%;
+    height: 58%;
+  }
+}
