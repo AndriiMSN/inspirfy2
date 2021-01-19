@@ -331,6 +331,7 @@ function ChangeImagesMob(element, mobileItem, i) {
 
             if (!el.classList.contains('animate')) {
                 el.style.maxWidth = `${document.documentElement.clientWidth}px`
+                el.style.width = ''
                 let child = el.querySelector('.mob-toggle-div')
 
                 let childWidth = el.clientWidth
@@ -830,7 +831,7 @@ function LeftBtnMob(el, titles, block, mobileItems, descriptions) {
 setTimeout(() => {
     let windowWidth = document.documentElement.clientWidth
     if (windowWidth < 1150) {
-        document.querySelectorAll('.mob-toggle-parent').forEach(el => {
+        document.querySelectorAll('.mob-toggle-parent').forEach((el, i) => {
             el.style.width = `${windowWidth}px`
             window.addEventListener('resize', () => {
                 let windowWidth = document.documentElement.clientWidth
