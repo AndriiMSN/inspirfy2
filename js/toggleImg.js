@@ -827,3 +827,18 @@ function LeftBtnMob(el, titles, block, mobileItems, descriptions) {
 
 }
 
+setTimeout(() => {
+    let windowWidth = document.documentElement.clientWidth
+    if (windowWidth < 1150) {
+        document.querySelectorAll('.mob-toggle-parent').forEach(el => {
+            el.style.width = `${windowWidth}px`
+            window.addEventListener('resize', () => {
+                let windowWidth = document.documentElement.clientWidth
+                el.style.width = `${windowWidth}px`
+            })
+        })
+
+    }
+
+
+}, 3500)

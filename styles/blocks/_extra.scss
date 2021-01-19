@@ -142,10 +142,10 @@
 		&__extra-2-parent
 		{
 		  width      : 151%;
-		  height     : 64%;
+		  height     : 71%;
 
 		  max-width  : 900px;
-		  max-height : 654px;
+		  max-height : 704px;
 
 
 		  &.animate
@@ -294,7 +294,7 @@
 		  height          : 100%;
 
 
-		  background      : url("../assets/img/extra-toggle-1.png") no-repeat center !important;
+		  background      : url("../assets/img/extra-toggle-1.png") no-repeat left !important;
 		  background-size : cover !important;
 
 
@@ -312,7 +312,7 @@
 		  height     : 71%;
 
 		  max-width  : 900px;
-		  max-height : 654px;
+		  max-height : 704px;
 
 
 		  &.animate
@@ -327,7 +327,7 @@
 		  height          : 100%;
 
 
-		  background      : url("../assets/img/extra-toggle-2.png") no-repeat center !important;
+		  background      : url("../assets/img/extra-toggle-2.png") no-repeat !important;
 		  background-size : cover !important;
 
 
@@ -358,7 +358,7 @@
 		  height          : 100%;
 
 
-		  background      : url("../assets/img/extra-toggle-3.png") no-repeat center !important;
+		  background      : url("../assets/img/extra-toggle-3.png") no-repeat !important;
 		  background-size : cover !important;
 
 
@@ -397,14 +397,14 @@
   from
   {
 	overflow : hidden;
-	height   : 64%;
+	height   : 71%;
 	width    : 0;
   }
   to
   {
 	overflow : hidden;
 	width    : 151%;
-	height   : 64%;
+	height   : 71%;
   }
 }
 
