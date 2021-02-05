@@ -36,74 +36,98 @@ function returnFalse(e) {
 
 // const navItems =
 // document.querySelectorAll(".header__nav__items li");
-function rippleElement($elemToRipple, width) {
-    $elemToRipple.ripples({
-        resolution: 40,
-        perturbance: 0.15,
-        interactive: false,
-        width: width
-    });
+// function rippleElement($elemToRipple, width) {
+//     $elemToRipple.ripples({
+//         resolution: 40,
+//         perturbance: 0.15,
+//         interactive: false,
+//         width: width
+//     });
 
 
-    let x = 0.5 * $elemToRipple.outerWidth();
-    let y = 0.5 * $elemToRipple.outerHeight();
-    // let y = 0
-    // let x = 0
-    let dropRadius = 200;
-    let strength = 0.15;
+//     let x = 0.5 * $elemToRipple.outerWidth();
+//     let y = 0.5 * $elemToRipple.outerHeight();
+//     // let y = 0
+//     // let x = 0
+//     let dropRadius = 200;
+//     let strength = 0.15;
 
-    $elemToRipple.ripples('drop', x, y, dropRadius, strength);
-    setTimeout(() => {
-        $elemToRipple.ripples('set', 'perturbance', 0.1)
-    }, 600)
-    setTimeout(() => {
-        $elemToRipple.ripples('set', 'perturbance', 0.05)
-    }, 900)
-    setTimeout(() => {
-        $elemToRipple.ripples('set', 'perturbance', 0.025)
-    }, 1200)
-    setTimeout(() => {
-        $elemToRipple.ripples('set', 'perturbance', 0)
-        $elemToRipple.ripples('destroy')
-    }, 1500)
+//     $elemToRipple.ripples('drop', x, y, dropRadius, strength);
+//     setTimeout(() => {
+//         $elemToRipple.ripples('set', 'perturbance', 0.1)
+//     }, 600)
+//     setTimeout(() => {
+//         $elemToRipple.ripples('set', 'perturbance', 0.05)
+//     }, 900)
+//     setTimeout(() => {
+//         $elemToRipple.ripples('set', 'perturbance', 0.025)
+//     }, 1200)
+//     setTimeout(() => {
+//         $elemToRipple.ripples('set', 'perturbance', 0)
+//         $elemToRipple.ripples('destroy')
+//     }, 1500)
+// }
+
+// function toggleImagesBgRipple(counter) {
+//     if (counter === 2) {
+//         let img = sections[counter].querySelector('.toggle__slider.active .toggle-bg-img')
+
+//         img.classList.add('rippled')
+
+//         let queryRipple = $(`.${img.className.split(' ')[0]}`)
+//         rippleElement(queryRipple, img.clientWidth)
+//     }
+//     if (counter === 3) {
+//         let img = sections[counter].querySelector('.toggle__slider.active .toggle-bg-img')
+
+//         img.classList.add('rippled')
+
+//         let queryRipple = $(`.${img.className.split(' ')[0]}`)
+//         rippleElement(queryRipple, img.clientWidth)
+//     }
+
+//     if (counter === 4) {
+//         let img = sections[counter].querySelector('.toggle__slider.active .toggle-bg-img')
+
+//         img.classList.add('rippled')
+
+//         let queryRipple = $(`.${img.className.split(' ')[0]}`)
+//         rippleElement(queryRipple, img.clientWidth)
+//     }
+
+//     if (counter === 6) {
+//         let img = sections[counter].querySelector('.about__img')
+
+//         img.classList.add('rippled')
+
+//         let queryRipple = $(`.${img.className.split(' ')[0]}`)
+//         rippleElement(queryRipple, img.clientWidth)
+//     }
+// }
+
+
+let isProfileInitTrigger =  false
+let isExtraInitTrigger = false
+let isToolsInitTrigger = false
+
+function triggerInitToggle(counter){
+    if(counter == 2 && !isProfileInitTrigger){
+        sections[counter].querySelector('.rm-active').click()
+        isProfileInitTrigger = true
+        return isProfileInitTrigger
+    }
+    if(counter == 3 && !isExtraInitTrigger){
+        sections[counter].querySelector('.rm-active').click()
+        isExtraInitTrigger = true
+        return isExtraInitTrigger
+    }
+    if(counter == 4 && !isToolsInitTrigger){
+        sections[counter].querySelector('.rm-active').click()
+        isToolsInitTrigger = true
+        return isToolsInitTrigger
+    }
 }
 
-function toggleImagesBgRipple(counter) {
-    if (counter === 2) {
-        let img = sections[counter].querySelector('.toggle__slider.active .toggle-bg-img')
-
-        img.classList.add('rippled')
-
-        let queryRipple = $(`.${img.className.split(' ')[0]}`)
-        rippleElement(queryRipple, img.clientWidth)
-    }
-    if (counter === 3) {
-        let img = sections[counter].querySelector('.toggle__slider.active .toggle-bg-img')
-
-        img.classList.add('rippled')
-
-        let queryRipple = $(`.${img.className.split(' ')[0]}`)
-        rippleElement(queryRipple, img.clientWidth)
-    }
-
-    if (counter === 4) {
-        let img = sections[counter].querySelector('.toggle__slider.active .toggle-bg-img')
-
-        img.classList.add('rippled')
-
-        let queryRipple = $(`.${img.className.split(' ')[0]}`)
-        rippleElement(queryRipple, img.clientWidth)
-    }
-
-    if (counter === 6) {
-        let img = sections[counter].querySelector('.about__img')
-
-        img.classList.add('rippled')
-
-        let queryRipple = $(`.${img.className.split(' ')[0]}`)
-        rippleElement(queryRipple, img.clientWidth)
-    }
-}
 
 function scrollDown() {
 
@@ -133,7 +157,8 @@ function scrollDown() {
             sections[counter + 1].classList.add("invise");
         }
 
-        toggleImagesBgRipple(counter)
+        // toggleImagesBgRipple(counter)
+        triggerInitToggle(counter)
 
     } else {
 
@@ -162,7 +187,9 @@ function scrollUp() {
 
         // NavBar(); // Change active item Navbar
 
-        toggleImagesBgRipple(counter)
+        // toggleImagesBgRipple(counter)
+
+        triggerInitToggle(counter)
 
     } else {
 
@@ -580,7 +607,7 @@ window.addEventListener('scroll', (e) => {
                 counter = sections.length - 1;
                 sections[counter].classList.add('animate')
                 sections[counter].classList.add('active')
-                console.log(counter, '1')
+                // console.log(counter, '1')
                 return counter
             }
 
@@ -597,7 +624,7 @@ window.addEventListener('scroll', (e) => {
                 counter = i
                 sections[counter].classList.add('animate')
                 sections[counter].classList.add('active')
-                console.log(counter, '2')
+                // console.log(counter, '2')
                 return counter, i
             }
         } else {
@@ -608,7 +635,7 @@ window.addEventListener('scroll', (e) => {
                 counter = 0;
                 sections[counter].classList.add('animate')
                 sections[counter].classList.add('active')
-                console.log(counter, '3')
+                // console.log(counter, '3')
                 return counter
             }
 
@@ -693,10 +720,11 @@ document.querySelectorAll(".header__nav__items li")
                 );
             setTimeout(() => {
                     sections[counter].classList.add('animate')
+                    triggerInitToggle(counter)
                 },
-                300)
+                800)
         }, false))
-
+        
         // el.addEventListener("click", );
     });
 

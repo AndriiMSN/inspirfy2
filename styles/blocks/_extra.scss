@@ -1,477 +1,362 @@
 @import "../base/mixins";
 
-.extra
-{
-
-  &__toggle
-  {
-
-	h1
-	{
-	  svg
-	  {
-		//max-width: 252px;
-		margin-left : 15px;
-		// 1560px
-		@media (max-width : $screen-xl-min)
-		{
-		  //max-width: 210px;
-		  //transform: translateY(-1.5px);
-		}
-		// 520px
-		@media (max-width : $screen-mdsm-min)
-		{
-		  //max-width: 100px;
-		  margin-left : 8px;
-		}
-	  }
-	}
+.extra {
+  &__toggle {
+    h1 {
+      svg {
+        //max-width: 252px;
+        margin-left: 15px;
+        // 1560px
+        @media (max-width: $screen-xl-min) {
+          //max-width: 210px;
+          //transform: translateY(-1.5px);
+        }
+        // 520px
+        @media (max-width: $screen-mdsm-min) {
+          //max-width: 100px;
+          margin-left: 8px;
+        }
+      }
+    }
   }
 
-  &__slider
-  {
+  &__slider {
+    &.active {
+      position: relative;
+      z-index: 20;
+      opacity: 1;
+    }
 
-	&.active
-	{
-	  position : relative;
-	  z-index  : 20;
-	  opacity  : 1;
-	}
+    &.disabled {
+      position: absolute;
+      z-index: -20;
+      opacity: 0;
+    }
 
-	&.disabled
-	{
-	  position : absolute;
-	  z-index  : -20;
-	  opacity  : 0;
-	}
+    &__img {
+      width: 100%;
 
-	&__img
-	{
-	  width : 100%;
+      &__bg-1 {
+        background: url("../assets/img/extra-bg-1.png");
+        width: 100%;
+        height: 100%;
+      }
 
-	  &__bg-1
-	  {
-		background : url("../assets/img/extra-bg-1.png");
-		width      : 100%;
-		height     : 100%;
-	  }
+      &__bg-2 {
+        background: url("../assets/img/extra-bg-2.png");
+        width: 100%;
+        height: 100%;
+      }
 
-	  &__bg-2
-	  {
-		background : url("../assets/img/extra-bg-2.png");
-		width      : 100%;
-		height     : 100%;
-	  }
+      &__bg-3 {
+        background: url("../assets/img/extra-bg-3.png");
+        width: 100%;
+        height: 100%;
+      }
 
-	  &__bg-3
-	  {
-		background : url("../assets/img/extra-bg-3.png");
-		width      : 100%;
-		height     : 100%;
-	  }
+      &__images__toggle-1 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: baseline;
 
-	  &__images__toggle-1
-	  {
-		position        : absolute;
-		width           : 100%;
-		height          : 100%;
-		display         : flex;
-		flex-direction  : column;
-		justify-content : center;
-		align-items     : baseline;
+        .toggle-div {
+          &.op-0 {
+            opacity: 0;
+          }
+        }
 
-		.toggle-div
-		{
+        &.row {
+          display: block;
+        }
 
-		  &.op-0
-		  {
-			opacity : 0;
-		  }
-		}
+        & div {
+          z-index: 20;
+          margin-bottom: 17px;
+        }
 
-		&.row
-		{
-		  display : block;
-		}
+        &__extra-1-parent {
+          width: 168%;
+          height: 71%;
 
+          max-width: 1007px;
+          max-height: 595px;
 
-		& div
-		{
+          &.animate {
+            animation: leftToRightHorizontalExtra-1 0.8s;
+          }
+        }
 
-		  z-index       : 20;
-		  margin-bottom : 17px;
+        &__extra-1 {
+          width: 100%;
+          height: 100%;
 
-		}
+          background: url("../assets/img/extra-toggle-1.png") no-repeat top left !important;
+          background-size: cover !important;
 
-		&__extra-1-parent
-		{
-		  width      : 168%;
-		  height     : 55%;
+          canvas {
+            width: 100% !important;
+            height: 100% !important;
+          }
+        }
 
-		  max-width  : 1007px;
-		  max-height : 595px;
+        &__extra-2-parent {
+          width: 151%;
+          height: 71%;
 
+          max-width: 900px;
+          max-height: 704px;
 
-		  &.animate
-		  {
-			animation : leftToRightHorizontalExtra-1 .8s;
+          &.animate {
+            animation: leftToRightHorizontalExtra-2 0.8s;
+          }
+        }
 
+        &__extra-2 {
+          width: 100%;
+          height: 100%;
 
-		  }
-		}
+          background: url("../assets/img/extra-toggle-2.png") no-repeat top left !important;
+          background-size: cover !important;
 
-		&__extra-1
-		{
+          canvas {
+            width: 100% !important;
+            height: 100% !important;
+          }
+        }
 
-		  width           : 100%;
-		  height          : 100%;
+        &__extra-3-parent {
+          width: 165%;
+          height: 60%;
 
+          max-width: 999px;
+          max-height: 557px;
 
-		  background      : url("../assets/img/extra-toggle-1.png") no-repeat top left !important;
-		  background-size : cover !important;
+          &.animate {
+            animation: leftToRightHorizontalExtra-3 0.8s;
+          }
+        }
 
+        &__extra-3 {
+          width: 100%;
+          height: 100%;
 
-		  canvas
-		  {
-			width  : 100% !important;
-			height : 100% !important;
-		  }
+          background: url("../assets/img/extra-toggle-3.png") no-repeat top left !important;
+          background-size: cover !important;
 
-		}
-
-		&__extra-2-parent
-		{
-		  width      : 151%;
-		  height     : 71%;
-
-		  max-width  : 900px;
-		  max-height : 704px;
-
-
-		  &.animate
-		  {
-			animation : leftToRightHorizontalExtra-2 .8s;
-		  }
-		}
-
-		&__extra-2
-		{
-		  width           : 100%;
-		  height          : 100%;
-
-
-		  background      : url("../assets/img/extra-toggle-2.png") no-repeat top left !important;
-		  background-size : cover !important;
-
-
-		  canvas
-		  {
-			width  : 100% !important;
-			height : 100% !important;
-		  }
-		}
-
-		&__extra-3-parent
-		{
-		  width      : 165%;
-		  height     : 52%;
-
-		  max-width  : 999px;
-		  max-height : 557px;
-
-		  &.animate
-		  {
-			animation : leftToRightHorizontalExtra-3 .8s;
-		  }
-		}
-
-		&__extra-3
-		{
-		  width           : 100%;
-		  height          : 100%;
-
-
-		  background      : url("../assets/img/extra-toggle-3.png") no-repeat top left !important;
-		  background-size : cover !important;
-
-
-		  canvas
-		  {
-			width  : 100% !important;
-			height : 100% !important;
-		  }
-		}
-
-	  }
-	}
-
+          canvas {
+            width: 100% !important;
+            height: 100% !important;
+          }
+        }
+      }
+    }
   }
 }
 
-.mob-extra
-{
-  &__slider
-  {
-	&__img
-	{
-	  width : 100%;
+.mob-extra {
+  &__slider {
+    &__img {
+      width: 100%;
 
-	  &__bg-1
-	  {
-		background : url("../assets/img/extra-bg-1.png");
-		width      : 100%;
-		height     : 100%;
-	  }
+      &__bg-1 {
+        background: url("../assets/img/extra-bg-1.png");
+        width: 100%;
+        height: 100%;
+      }
 
-	  &__bg-2
-	  {
-		background : url("../assets/img/extra-bg-2.png");
-		width      : 100%;
-		height     : 100%;
-	  }
+      &__bg-2 {
+        background: url("../assets/img/extra-bg-2.png");
+        width: 100%;
+        height: 100%;
+      }
 
-	  &__bg-3
-	  {
-		background : url("../assets/img/extra-bg-3.png");
-		width      : 100%;
-		height     : 100%;
-	  }
+      &__bg-3 {
+        background: url("../assets/img/extra-bg-3.png");
+        width: 100%;
+        height: 100%;
+      }
 
-	  &__images__toggle-1
-	  {
-		position        : absolute;
-		width           : 100%;
-		height          : 100%;
-		display         : flex;
-		flex-direction  : column;
-		justify-content : center;
-		align-items     : center;
+      &__images__toggle-1 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-		.toggle-div
-		{
+        .toggle-div {
+          &.op-0 {
+            opacity: 0;
+          }
+        }
 
-		  &.op-0
-		  {
-			opacity : 0;
-		  }
-		}
+        &.row {
+          display: block;
+        }
 
-		&.row
-		{
-		  display : block;
-		}
+        & div {
+          z-index: 20;
+          margin-bottom: 17px;
+        }
 
+        &__extra-1-parent {
+          width: 168%;
+          height: 65%;
 
-		& div
-		{
+          max-width: 1007px;
+          max-height: 595px;
 
-		  z-index       : 20;
-		  margin-bottom : 17px;
+          &.animate {
+            animation: leftToRightHorizontalExtra-1Mob 0.8s;
+          }
+        }
 
-		}
+        &__extra-1 {
+          width: 100%;
+          height: 100%;
 
-		&__extra-1-parent
-		{
-		  width      : 168%;
-		  height     : 65%;
+          background: url("../assets/img/extra-toggle-1.png") no-repeat top left !important;
+          background-size: cover !important;
 
-		  max-width  : 1007px;
-		  max-height : 595px;
+          canvas {
+            width: 100% !important;
+            height: 100% !important;
+          }
+        }
 
+        &__extra-2-parent {
+          width: 151%;
+          height: 71%;
 
-		  &.animate
-		  {
-			animation : leftToRightHorizontalExtra-1Mob .8s;
+          max-width: 900px;
+          max-height: 704px;
 
+          &.animate {
+            animation: leftToRightHorizontalExtra-2Mob 0.8s;
+          }
+        }
 
-		  }
-		}
+        &__extra-2 {
+          width: 100%;
+          height: 100%;
 
-		&__extra-1
-		{
+          background: url("../assets/img/extra-toggle-2.png") no-repeat top left !important;
+          background-size: cover !important;
 
-		  width           : 100%;
-		  height          : 100%;
+          canvas {
+            width: 100% !important;
+            height: 100% !important;
+          }
+        }
 
+        &__extra-3-parent {
+          width: 165%;
+          height: 62%;
 
-		  background      : url("../assets/img/extra-toggle-1.png") no-repeat top left !important;
-		  background-size : cover !important;
+          max-width: 999px;
+          max-height: 557px;
 
+          &.animate {
+            animation: leftToRightHorizontalExtra-3Mob 0.8s;
+          }
+        }
 
-		  canvas
-		  {
-			width  : 100% !important;
-			height : 100% !important;
-		  }
+        &__extra-3 {
+          width: 100%;
+          height: 100%;
 
-		}
+          background: url("../assets/img/extra-toggle-3.png") no-repeat top left !important;
+          background-size: cover !important;
 
-		&__extra-2-parent
-		{
-		  width      : 151%;
-		  height     : 71%;
-
-		  max-width  : 900px;
-		  max-height : 704px;
-
-
-		  &.animate
-		  {
-			animation : leftToRightHorizontalExtra-2Mob .8s;
-		  }
-		}
-
-		&__extra-2
-		{
-		  width           : 100%;
-		  height          : 100%;
-
-
-		  background      : url("../assets/img/extra-toggle-2.png") no-repeat top left !important;
-		  background-size : cover !important;
-
-
-		  canvas
-		  {
-			width  : 100% !important;
-			height : 100% !important;
-		  }
-		}
-
-		&__extra-3-parent
-		{
-		  width      : 165%;
-		  height     : 62%;
-
-		  max-width  : 999px;
-		  max-height : 557px;
-
-		  &.animate
-		  {
-			animation : leftToRightHorizontalExtra-3Mob .8s;
-		  }
-		}
-
-		&__extra-3
-		{
-		  width           : 100%;
-		  height          : 100%;
-
-
-		  background      : url("../assets/img/extra-toggle-3.png") no-repeat top left !important;
-		  background-size : cover !important;
-
-
-		  canvas
-		  {
-			width  : 100% !important;
-			height : 100% !important;
-		  }
-		}
-
-	  }
-	}
-
+          canvas {
+            width: 100% !important;
+            height: 100% !important;
+          }
+        }
+      }
+    }
   }
 }
 
-@keyframes leftToRightHorizontalExtra-1
-{
-  from
-  {
-	overflow : hidden;
-	height   : 55%;
-	width    : 0;
+@keyframes leftToRightHorizontalExtra-1 {
+  from {
+    overflow: hidden;
+    height: 71%;
+    width: 0;
   }
-  to
-  {
-	overflow : hidden;
-	width    : 168%;
-	height   : 55%;
+  to {
+    overflow: hidden;
+    width: 168%;
+    height: 71%;
   }
 }
 
-
-@keyframes leftToRightHorizontalExtra-2
-{
-  from
-  {
-	overflow : hidden;
-	height   : 71%;
-	width    : 0;
+@keyframes leftToRightHorizontalExtra-2 {
+  from {
+    overflow: hidden;
+    height: 71%;
+    width: 0;
   }
-  to
-  {
-	overflow : hidden;
-	width    : 151%;
-	height   : 71%;
+  to {
+    overflow: hidden;
+    width: 151%;
+    height: 71%;
   }
 }
 
-
-@keyframes leftToRightHorizontalExtra-3
-{
-  from
-  {
-	overflow : hidden;
-	height   : 52%;
-	width    : 0;
+@keyframes leftToRightHorizontalExtra-3 {
+  from {
+    overflow: hidden;
+    height: 60%;
+    width: 0;
   }
-  to
-  {
-	overflow : hidden;
-	width    : 165%;
-	height   : 52%;
+  to {
+    overflow: hidden;
+    width: 165%;
+    height: 60%;
   }
 }
 
-
-@keyframes leftToRightHorizontalExtra-1Mob
-{
-  from
-  {
-	overflow : hidden;
-	height   : 65%;
-	width    : 0;
+@keyframes leftToRightHorizontalExtra-1Mob {
+  from {
+    overflow: hidden;
+    height: 65%;
+    width: 0;
   }
-  to
-  {
-	overflow : hidden;
-	width    : 168%;
-	height   : 65%;
+  to {
+    overflow: hidden;
+    width: 168%;
+    height: 65%;
   }
 }
 
-
-@keyframes leftToRightHorizontalExtra-2Mob
-{
-  from
-  {
-	overflow : hidden;
-	height   : 71%;
-	width    : 0;
+@keyframes leftToRightHorizontalExtra-2Mob {
+  from {
+    overflow: hidden;
+    height: 71%;
+    width: 0;
   }
-  to
-  {
-	overflow : hidden;
-	width    : 151%;
-	height   : 71%;
+  to {
+    overflow: hidden;
+    width: 151%;
+    height: 71%;
   }
 }
 
-
-@keyframes leftToRightHorizontalExtra-3Mob
-{
-  from
-  {
-	overflow : hidden;
-	height   : 62%;
-	width    : 0;
+@keyframes leftToRightHorizontalExtra-3Mob {
+  from {
+    overflow: hidden;
+    height: 62%;
+    width: 0;
   }
-  to
-  {
-	overflow : hidden;
-	width    : 165%;
-	height   : 62%;
+  to {
+    overflow: hidden;
+    width: 165%;
+    height: 62%;
   }
 }

@@ -222,18 +222,18 @@ function ChangeImages(element, desktopItems, i, direction = "") {
         desktopItems[i].classList.remove('disabled')
         desktopItems[i].classList.add('active')
 
-        let bgToRipple = desktopItems[i].querySelector('.toggle-bg-img')
+        // let bgToRipple = desktopItems[i].querySelector('.toggle-bg-img')
 
-        if (!bgToRipple.classList.contains('rippled')) {
+        // if (!bgToRipple.classList.contains('rippled')) {
 
-            let bgToRippleClassName = bgToRipple.className.split(' ')[0]
+        //     let bgToRippleClassName = bgToRipple.className.split(' ')[0]
 
-            let queryBgToRipple = $(`.${bgToRippleClassName}`)
+        //     let queryBgToRipple = $(`.${bgToRippleClassName}`)
 
-            rippleBg(queryBgToRipple, bgToRipple.clientWidth)
-        }
+        //     rippleBg(queryBgToRipple, bgToRipple.clientWidth)
+        // }
 
-        bgToRipple.classList.remove('rippled')
+        // bgToRipple.classList.remove('rippled')
 
         desktopItems[i].querySelectorAll('.toggle-parent').forEach((el) => {
 
